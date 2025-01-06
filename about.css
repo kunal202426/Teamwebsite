@@ -1,0 +1,85 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    background-color: black;
+    overflow-x: hidden;
+    
+    
+  }
+
+
+
+  /* Add top padding to avoid navbar overlap */
+  .section1 {
+    height: 30vh;
+    padding-top: 80px; /* Adjust this value to match the height of the navbar */
+  }
+  
+  .section4 {
+    height: 65vh;
+  }
+  
+  .section2, .section3 {
+    height: 8vh;
+  }
+  .mid1, .mid2, .mid3, .mid4{
+    height: 8vh
+  }
+  
+  .text-left {
+    font-size: 1.2em; /* Increase the font size */
+    line-height: 1.6; /* Increase line spacing */
+    max-width: 50%;
+    text-align: justify;
+    margin-left: 5%;
+    padding: 20px;
+  
+    
+  }
+  
+  .text-right {
+    font-size: 1.2em; /* Increase the font size */
+    line-height: 1.6; /* Increase line spacing */
+    max-width: 40%;
+    text-align: justify; /* Left-aligned text */
+    margin-left: auto;
+    margin-right: 5%;
+    padding: 20px;
+    
+  }
+  
+  /* Center Heading Relative to Text */
+  .text-left h1 {
+    text-align: center;
+  }
+  
+  .text-right h1 {
+    text-align: center;
+  }
+  
+  
+}
+
+
+/* Pop-in keyframes */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  #container3D{
+    position: fixed;
+    inset: 0;
+    /*background-color: #a32222;*/
+    z-index: 100;
+    pointer-events: none;
+}
+  

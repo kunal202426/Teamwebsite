@@ -1,0 +1,571 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(-45deg, #000000, #000813, #000000, #2a2a2a);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevents horizontal scroll due to background animation */
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 10% 50%;
+  }
+  50% { 
+    background-position: 100% 50%;  
+  }
+  100% {
+    background-position: 10% 50%;
+  }
+}
+
+/* Navigation bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  z-index: 1000;
+  transition: top 0.2s ease-in-out;
+}
+
+.navbar.scrolled {
+  top: -100px;
+}
+
+/* Center logo styling */
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+}
+
+.logo img {
+  width: 120px;
+  position: relative;
+  top: 10px;
+}
+
+/* Navigation links with left and right alignment */
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 50px; /* Adds padding for spacing from navbar edges */
+}
+
+.nav-links-left,
+.nav-links-right {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* Reduced gap for closer alignment */
+}
+
+.nav-links-left {
+  justify-content: flex-end; /* Aligns closer to the logo on the left */
+  flex-grow: 0.3; /* Controls spacing on the left side */
+}
+
+.nav-links-right {
+  justify-content: flex-start; /* Aligns closer to the logo on the right */
+  flex-grow: 0.25; /* Controls spacing on the right side */
+}
+
+/* Link styling */
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  position: relative;
+  padding: 5px 10px; /* Adds padding for better click area */
+  white-space: nowrap; /* Prevents text wrapping to a new line */
+}
+
+/* Hover effect for links */
+.nav-links a:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: white;
+  left: 0;
+  bottom: -5px;
+  animation: underline 0.3s ease-in-out forwards;
+}
+
+/* Ensure navbar content stays aligned */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 70px;
+}
+
+/* Underline animation */
+@keyframes underline {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+#container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+#content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+  color: #fff;
+}
+
+h1 {
+  font-size: 48px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+p {
+  font-size: 18px;
+  color: #ddd;
+}
+
+#timer {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #ff6347;
+}
+
+/* Mobile and Tablet Media Queries */
+@media (min-width: 481px) and (max-width: 1024px) {  /* Tablet */
+  .navbar {
+    padding: 0vw 4vw;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 6.5vh;
+    display: flex;
+    z-index: 1000;
+  }
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 1.6vw;
+    z-index: 1000;
+  }
+
+  .logo img {
+    width: 15vw;
+  }
+
+  .nav-links-left,
+.nav-links-right {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: 3vw
+}
+
+  /* Hide the horizontal nav links and add the hamburger button */
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    width: 4vw;
+    height: 0.3vw;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: relative;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 4vw;
+    height: 0.3vw;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .hamburger::before {
+    top: -1vw;
+  }
+
+  .hamburger::after {
+    bottom: -1vw;
+  }
+
+  /* On click: Toggle the nav-links */
+  .navbar.active .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 100%;
+    left: 0; /* Align to the very left of the screen */
+    width: 100vw; /* Ensure it covers the full screen width */
+    padding: 5vw 0;
+    z-index: 999;
+    border-bottom-left-radius: 20vw;
+}
+
+
+  .navbar.active .hamburger::before {
+    top: -1.3vw;
+  }
+
+  .navbar.active .hamburger::after {
+    bottom: -1.3vw;
+  }
+
+  .nav-links a {
+    font-size: 2vw;
+    position: relative;
+    padding: 5px 0;
+  }
+}
+
+@media (max-width: 480px) {  /* Mobile */
+  .navbar {
+    padding: 1vw 6vw;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 6.5vh;
+    display: flex;
+    z-index: 1000;
+  }
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 3vw;
+    z-index: 1000;
+  }
+
+  .logo img {
+    width: 20vw;
+  }
+
+  .nav-links-left,
+.nav-links-right {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: 6vw
+}
+
+  /* Hide the horizontal nav links and add the hamburger button */
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    width: 8vw;
+    height: 0.7vw;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: relative;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 8vw;
+    height: 0.7vw;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .hamburger::before {
+    top: -1.7vw;
+  }
+
+  .hamburger::after {
+    bottom: -1.7vw;
+  }
+
+  /* On click: Toggle the nav-links */
+  .navbar.active .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6vw;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 10vw 0;
+    z-index: 999;
+    border-bottom-left-radius: 20vw ;
+  }
+
+  .navbar.active .hamburger::before {
+    top: -2.3vw;
+  }
+
+  .navbar.active .hamburger::after {
+    bottom: -2.3vw;
+  }
+}
+
+@media (max-width: 940px) and (orientation: landscape) {  /* Mobile */
+  .navbar {
+    padding: 0vw 4vw;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 11vh;
+    display: flex;
+    z-index: 1000;
+  }
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0.1vw;
+    z-index: 1000;
+  }
+
+  .logo img {
+    width: 8vw;
+  }
+
+  .nav-links-left,
+.nav-links-right {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: 3vw
+}
+
+  /* Hide the horizontal nav links and add the hamburger button */
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    width: 4vw;
+    height: 0.2vw;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: relative;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 4vw;
+    height: 0.2vw;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .hamburger::before {
+    top: -1vw;
+  }
+
+  .hamburger::after {
+    bottom: -1vw;
+  }
+
+  /* On click: Toggle the nav-links */
+  .navbar.active .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 100%;
+    left: 0; /* Align to the very left of the screen */
+    width: 100vw; /* Ensure it covers the full screen width */
+    padding: 5vw 0;
+    z-index: 999;
+    border-bottom-left-radius: 20vw;
+}
+
+
+  .navbar.active .hamburger::before {
+    top: -1.3vw;
+  }
+
+  .navbar.active .hamburger::after {
+    bottom: -1.3vw;
+  }
+}
+/* Footer */
+footer {
+  position: relative;
+  bottom: 60px;
+  width: 100%;
+  text-align: center;
+}
+
+.social-media {
+  display: inline-flex;
+  align-items: center;
+}
+
+.social-media a {
+  margin: 0 10px;
+}
+
+footer hr {
+  border: 1px solid rgba(255, 255, 255, 0.767);
+  width: 70%;
+  margin: 8px auto;
+}
+
+/* Social Media Icons - Individual Sizes and Hover Effects */
+.icon-linkedin {
+  width: 25px;
+  transition: transform 0.3s;
+}
+
+.icon-linkedin:hover {
+  transform: scale(1.1);
+}
+
+.icon-twitter {
+  width: 30px;
+  transition: transform 0.3s;
+}
+
+.icon-twitter:hover {
+  transform: scale(1.1);
+}
+
+.icon-instagram {
+  width: 27px;
+  transition: transform 0.3s;
+}
+
+.icon-instagram:hover {
+  transform: scale(1.1);
+}
+
+.icon-facebook {
+  width: 28px;
+  transition: transform 0.3s;
+}
+
+.icon-facebook:hover {
+  transform: scale(1.1);
+}
+
+.icon-youtube {
+  width: 32px;
+  transition: transform 0.3s;
+}
+
+.icon-youtube:hover {
+  transform: scale(1.1);
+}
+
+
+.icon-Gmail {
+width: 32px;
+transition: transform 0.3s;
+}
+
+.icon-Gmail:hover {
+transform: scale(1.1);
+}
+
+
+.icon-Gmail {
+width: 32px;
+transition: transform 0.3s;
+}
+
+.icon-Gmail:hover {
+transform: scale(1.1);
+}
+
+
+.call-icon {
+position: relative;
+display: inline-block;
+cursor: pointer;
+margin-left: 0.5vw;
+}
+
+.call-icon img {
+width: 1.8vw;
+transition: transform 0.3s;
+}
+
+.call-icon:hover img {
+transform: scale(1.1);
+}
+
+/* Drop-Up Menu */
+.drop-up-menu {
+position: absolute;
+bottom: 2.5vw;
+right: 10vw;
+background-color: rgba(255, 255, 255, 0.65);
+padding: 0.8vw;
+border-radius: 2vw;
+display: none;
+z-index: 2;
+width: max-content;
+}
+
+.drop-up-menu.show {
+display: block;
+}
+
+.drop-up-menu ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+
+.drop-up-menu li {
+color: rgb(0, 0, 0);
+font-size: 0.9rem;
+padding: 0.3vw 0;
+}

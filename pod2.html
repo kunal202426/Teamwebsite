@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Technology </title>
+    <link rel = "stylesheet" type = "text/css" href = "pod2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="navfoot.css">
+  
+  </head>
+
+   <!-- Navigation -->
+   <nav class="navbar">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Levitate Hyperloop Logo" draggable="false">
+    </a>
+
+    <!-- Hamburger Menu for mobile -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+
+    <ul class="nav-links">
+      <div class="nav-links-left">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="newteam.html">Team</a></li>
+        <a href="pod2.html">Technology</a></li> 
+      </div>
+      <div class="nav-links-right">
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="sponsors.html">Partners</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </div>
+    </ul>
+  </nav>
+
+  <body>
+    <section>
+      <img src="bg.jpeg" id="bg">
+      <img src="justpod.png" id="moon">
+      <img src="podmid.png" id="mountain">
+      <img src="floorr.png" id="road">
+      <h2 id = "text" data-aos="fade-right" data-aos-easing="ease-out-cubic"data-aos-duration="1000">Technology </h2>
+    </section>
+    <script type="text/javascript">
+      let bg = document.getElementById("bg");
+      // let moon = document.getElementById("moon");
+      let mountain = document.getElementById("mountain");
+      let road = document.getElementById("road");
+      let text = document.getElementById("text");
+
+      window.addEventListener('scroll',function(){
+        var value = window.scrollY;
+
+        bg.style.top = value * 0.5 + 'px';
+        moon.style.left = -value * 2 + 'px';
+        mountain.style.top = -value * 0.1 + 'px';
+        road.style.top = value * 0.15 + 'px';
+        text.style.top = value * 1 + 'px';
+
+      })
+    </script>
+  </body>
+  
+  <body>
+    <h3 id = "text1" data-aos="fade-right" data-aos-easing="ease-out-cubic"data-aos-duration="1000">
+      Welcome to our research prototype. Content will be added soon as we continue to develop and refine our ideas.
+    </h3>
+
+     <!-- Footer -->
+<footer>
+  <div class="social-media">
+    <a href="mailto:levitate@vit.ac.in" target="_blank" aria-label="Gmail">
+      <img src="mail.png" alt="Gmail" class="icon-Gmail">
+    </a>
+    <a href="https://www.linkedin.com/company/levitate-vit/" target="_blank" aria-label="LinkedIn">
+      <img src="lnd.png" alt="LinkedIn" class="icon-linkedin">
+    </a>
+    <a href="https://x.com/levitate_vit?t=kzOYYuIGqD3GC5pIyH9Vyg&s=09" target="_blank" aria-label="Twitter">
+      <img src="tw.png" alt="Twitter" class="icon-twitter">
+    </a>
+    <a href="https://www.instagram.com/levitate_vit" target="_blank" aria-label="Instagram">
+      <img src="insta.png" alt="Instagram" class="icon-instagram">
+    </a>
+    <a href="https://www.facebook.com/teamlevitatevit" target="_blank" aria-label="Facebook">
+      <img src="fb.png" alt="Facebook" class="icon-facebook">
+    </a>
+    <a href="https://www.youtube.com/@LevitateHyperloop" target="_blank" aria-label="YouTube">
+      <img src="yt.png" alt="YouTube" class="icon-youtube">
+    </a>
+  </div>
+  <hr>
+  
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+      AOS.init(); // Initialize AOS
+  </script>
+</body>
+
+ 
+
+</html>

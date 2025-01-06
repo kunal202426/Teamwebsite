@@ -1,0 +1,93 @@
+body{
+  background: #040404;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  font-weight: bold;
+}
+
+
+
+section{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 100px;
+  color:aliceblue;
+
+}
+
+.container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Main-title{
+  padding-top: 10vh;  
+  color: #fff;
+  font-size: 3.5em;
+  margin-bottom: 0px;
+  z-index: 222;
+  text-align: center;
+  
+}
+
+.content{
+  position: relative;
+  width: 1150px;
+  display: flex;
+  justify-content: center;
+}
+
+.content .image{
+  position: relative;
+  width: 800px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.content .image img{
+  z-index: 111;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.content .text-box{
+  z-index: 222;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(80px);
+  padding: 40px;
+  max-width: 400px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  transform: translate(-80px, 50px);
+
+}
+
+.content .text-box h3{
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.content .text-box p{
+  font-size: 1em;
+}
+.media-icons{
+  margin-top: 100px;
+}
+
+.media-icons a{
+  color: #fff;
+  font-size: 2em;
+  margin: 60px;
+}
+
+

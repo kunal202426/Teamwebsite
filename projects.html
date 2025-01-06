@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperloop Projects</title>
+    <link rel="stylesheet" href="projects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="navfoot.css">
+    <link rel="icon" href="logo.png" type="image/x-icon">
+</head>
+
+
+
+<body>  
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Levitate Hyperloop Logo" draggable="false">
+    </a>
+
+    <!-- Hamburger Menu for mobile -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+
+    <ul class="nav-links">
+      <div class="nav-links-left">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="newteam.html">Team</a></li>
+        <li><a href="pod2.html">Technology</a></li>
+      </div>
+      <div class="nav-links-right">
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="sponsors.html">Partners</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </div>
+    </ul>
+  </nav> 
+  
+    <h1 class="Main-title">Team Projects</h1>
+  
+
+  <section class="sec-01">
+      <div class="container">
+          <div class = "content">
+            <div class = "image">
+              <img src="800.jpg" alt="">
+            </div>
+            <div class="text-box">
+              <h3> 800 Mine Project</h3>
+              <p>The 800 Mine Project studies latency in networked environments to enhance safety, efficiency, and sustainability. 
+                Focusing on real-time monitoring, risk assessments, and feedback, it aims to improve performance, backup and recovery, and set benchmarks for smart infrastructure.
+              </p>
+            </div>   
+              
+          </div>  
+      </div>
+  </section>
+
+  <section class="sec-02">
+    <div class="container">
+        
+        <div class = "content">
+          <div class = "image">
+            <img src="graph.jpg" alt="">
+          </div>
+          <div class="text-box">
+            <h3> Hyperloop Risk Analytics and Scheduler</h3>
+            <p> Combines deep learning and statistical models to identify network pathways and risks, optimize schedules, and prevent disruptions in large-scale hyperloop networks. 
+              While it was conceived with the hyperloop ecosystem in mind, its applications may be widely applicable across the logistics and transportation industry.
+            </p>
+        </div>   
+            
+        </div>
+        
+    </div>
+</section>
+
+<section class="sec-03">
+  <div class="container">
+      
+      <div class = "content">
+        <div class = "image">
+          <img src="magnetic.jpeg" alt="">
+        </div>
+        <div class="text-box">
+          <h3>Magnetic and Superconducting Materials Science Project</h3>
+          <p>With application in energy, transportation, and computing industries, 
+            this project focuses on efficient and scalable superconductors, magnets, and energy storage materials.
+          </p>
+      </div>   
+          
+      </div>
+      
+  </div>
+</section>
+
+<section class="sec-04">
+  <div class="container">
+      <div class = "content">
+        <div class = "image">
+          <img src="coal.jpeg" alt="">
+        </div>
+        <div class="text-box">
+          <h3>Petroleum Augmentation Project</h3>
+          <p>Recognizing the dependance on petroleum within current energy landscape, 
+            this project takes a techno-commercial view towards augmenting energy-heavy projects and infrastructure with petroleum-based sources.
+          </p>
+      </div>   
+          
+      </div>
+      
+  </div>
+</section>
+
+<script>
+  ScrollReveal({
+    reset: true,
+    distance: '40px',
+    duration: 2500,
+    delay: 400
+  });
+
+  ScrollReveal().reveal('.Main-title', { delay: 100,origin:'left' });
+  ScrollReveal().reveal('.sec-01 .image,.sec-02 .image,.sec-03 .image,.sec-04 .image', { delay: 100, origin: 'bottom' });
+  ScrollReveal().reveal('.sec-01 .text-box,.sec-02 .text-box,.sec-03 .text-box,.sec-04 .text-box', { delay: 100, origin: 'right' });
+</script>
+
+<!-- Footer -->
+<footer>
+  <div class="social-media">
+    <a href="mailto:levitate@vit.ac.in" target="_blank" aria-label="Gmail">
+      <img src="mail.png" alt="Gmail" class="icon-Gmail">
+    </a>
+    <a href="https://www.linkedin.com/company/levitate-vit/" target="_blank" aria-label="LinkedIn">
+      <img src="lnd.png" alt="LinkedIn" class="icon-linkedin">
+    </a>
+    <a href="https://x.com/levitate_vit?t=kzOYYuIGqD3GC5pIyH9Vyg&s=09" target="_blank" aria-label="Twitter">
+      <img src="tw.png" alt="Twitter" class="icon-twitter">
+    </a>
+    <a href="https://www.instagram.com/levitate_vit" target="_blank" aria-label="Instagram">
+      <img src="insta.png" alt="Instagram" class="icon-instagram">
+    </a>
+    <a href="https://www.facebook.com/teamlevitatevit" target="_blank" aria-label="Facebook">
+      <img src="fb.png" alt="Facebook" class="icon-facebook">
+    </a>
+    <a href="https://www.youtube.com/@LevitateHyperloop" target="_blank" aria-label="YouTube">
+      <img src="yt.png" alt="YouTube" class="icon-youtube">
+    </a>
+  </div>
+  <hr>
+  
+</footer>
+
+</body>
+</html>

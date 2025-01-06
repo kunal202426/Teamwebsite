@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="contact2.css">
+</head>
+<body>
+  <!-- Three.js Background Canvas -->
+  <div id="threejs-bg"></div>
+
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Navigation -->
+    <header>
+      <nav class="navbar">
+        <a href="index.html" class="logo">
+          <img src="logo.png" alt="Levitate Hyperloop Logo">
+        </a>
+  
+        <div class="hamburger" onclick="toggleMenu()">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+  
+        <ul class="nav-links">
+          <div class="nav-links-left">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="newteam.html">Team</a></li>
+            <li><a href="pod2.html">Technology</a></li>
+          </div>
+          <div class="nav-links-right">
+          <li><a href="pod.html">Research</a></li>
+          <li><a href="sponsors.html">Partners</a></li>
+         <li><a href="contact.html">Contact Us</a></li>
+          </div>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact">
+      <h1>Contact Us</h1>
+      <p>Get in touch with Our Team! We’d love to hear from you!</p>
+
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="query-type">Query Type <span class="required">*</span></label>
+          <select id="query-type" required>
+            <option value="">Select</option>
+            <option value="General">General Query</option>
+            <option value="Support">Partnership</option>
+            <option value="Feedback">Feedback</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="name">Name <span class="required">*</span></label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="form-group">
+          <label for="organization-name">Organization Name</label>
+          <input type="text" id="organization-name">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone">
+        </div>
+        <div class="form-group">
+          <label for="email">Email <span class="required">*</span></label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message <span class="required">*</span></label>
+          <textarea id="message" rows="5" required></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </section>
+
+    <div class="popup hidden">
+      <img src="cross.png" alt="Close" class="close-btn">
+      <p>Your query has been submitted successfully!</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="social-media">
+      <a href="https://www.linkedin.com/company/levitate-vit/" target="_blank" aria-label="LinkedIn">
+        <img src="lnd.png" alt="LinkedIn" class="icon-linkedin">
+      </a>
+      <a href="https://x.com/levitate_vit?t=kzOYYuIGqD3GC5pIyH9Vyg&s=09" target="_blank" aria-label="Twitter">
+        <img src="tw.png" alt="Twitter" class="icon-twitter">
+      </a>
+      <a href="https://www.instagram.com/levitate_vit" target="_blank" aria-label="Instagram">
+        <img src="insta.png" alt="Instagram" class="icon-instagram">
+      </a>
+      <a href="https://www.facebook.com/teamlevitatevit" target="_blank" aria-label="Facebook">
+        <img src="fb.png" alt="Facebook" class="icon-facebook">
+      </a>
+      <a href="https://www.youtube.com/@LevitateHyperloop" target="_blank" aria-label="YouTube">
+        <img src="yt.png" alt="YouTube" class="icon-youtube">
+      </a>
+    </div>
+    <hr>
+  </footer>
+
+  <!-- Three.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="contact2.js"></script>
+</body>
+</html>
+

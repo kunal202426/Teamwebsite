@@ -1,0 +1,156 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(-45deg, #131313, #000710, #000000,  #696969);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 10% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 10% 50%; }
+  }
+
+
+  
+  /* Contact Section */
+.contact {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 150px;
+    text-align: center;
+    color: #ffffff; 
+  }
+  
+  .contact h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .contact p {
+    margin-bottom: 30px;
+    max-width: 600px;
+  }
+
+/* Main Section */
+main {
+    padding: 20px;
+    text-align: center;
+}
+.contact-heading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.contact-form input, .contact-form select, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.contact-form .submit-btn {
+    width: 100%;
+    padding: 10px 150px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.contact-form .submit-btn:hover {
+    background-color: #555;
+}
+
+form .required {
+    color: #ff5722;
+  }
+  
+  
+  /* Submit Button */
+  .submit-btn {
+    background-color: #0b0b0b;
+    color: white;
+    padding: 15px 50px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #eaeaeacf;
+  }
+  
+  /* Popup styles */
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #cccccc;
+    color: rgb(0, 0, 0);
+    padding: 80px;
+    border-radius: 90px 400px 70px 50px;
+    width: 800px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: none;
+    transition: transform 0.5s ease, left 0.5s ease;
+  }
+  
+  .popup.hidden {
+    display: none;
+  }
+  
+  .popup.exiting {
+    transform: translate(100vw, -50%);
+  }
+  
+  .popup p {
+    font-size: 20px; /* Bigger text for popup */
+    font-weight: bold;
+  }
+  
+  .popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .popup .close-btn:hover {
+    transform: scale(1.2); /* Slightly bigger on hover */
+  }
+  

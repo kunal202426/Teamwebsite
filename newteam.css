@@ -1,0 +1,370 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(120deg, #070707, #000000);
+    color: #0b0404;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding-top: 10vh;
+    margin-bottom: 60px;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #dadee2;
+    text-transform: uppercase;
+}
+
+.card {
+    /* background: #e3dede; */
+    background: url('teambg.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 4px 10px rgba(235, 235, 235, 0.15);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgb(196, 189, 189);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #67e0f3;
+}
+
+.card p {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #eddfdf;
+}
+
+.board .card {
+  flex: 1 1 calc(25% - 20px); /* Each card takes 25% width minus the gap */
+  max-width: 200px; /* Limit the maximum width */
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex; /* Enables content alignment */
+  flex-direction: column; /* Ensures vertical stacking */
+  justify-content: space-between; /* Even spacing between items */
+}
+
+.board .card img {
+  width: 100%; /* Image width fits card */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 50%; /* Circular image */
+  margin-bottom: 10px;
+}
+
+/* LinkedIn Button at the Bottom */
+.linkedin-container {
+  margin-top: auto; /* Push button to the bottom */
+}
+
+/* LinkedIn Button Styling */
+.linkedin-btn {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: #0077b5; /* LinkedIn blue */
+  color: white;
+  border-radius: 50%; /* Circular button */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  text-decoration: none;
+  margin: 0 auto; /* Center horizontally */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.linkedin-btn:hover {
+  background-color: #005582; /* Darker blue on hover */
+  transform: scale(1.1); /* Slightly bigger on hover */
+}
+
+.linkedin-btn i {
+  line-height: 1;
+}
+
+
+.board {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.executives .row {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust spacing between cards */
+    margin-bottom: 20px; /* Adjust spacing between rows */
+}
+
+.executives .card {
+    flex: 1;
+    max-width: 200px; /* Set a max width for the cards */
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.executives .card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.executives .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.principal-engineers .row {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust spacing between cards */
+    margin-bottom: 20px; /* Adjust spacing between rows */
+}
+
+.principal-engineers .card {
+    flex: 1;
+    max-width: 200px; /* Set a max width for the cards */
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.principal-engineers .card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.principal-engineers .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* Circular profile pictures */
+    margin-bottom: 10px;
+}
+
+.technical-teams .row {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust spacing between cards */
+    margin-bottom: 20px; /* Adjust spacing between rows */
+}
+
+.technical-teams .card {
+    flex: 1;
+    max-width: 200px; /* Slightly larger width for leads */
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.technical-teams .card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.technical-teams .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* Circular profile pictures */
+    margin-bottom: 10px;
+}
+
+.communication-leads .row {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust spacing between cards */
+    margin-bottom: 20px; /* Adjust spacing between rows */
+}
+
+.communication-leads .card {
+    flex: 1;
+    max-width: 200px; /* Ensure uniform card size */
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.communication-leads .card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.communication-leads .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* Circular profile pictures */
+    margin-bottom: 10px;
+}
+
+.team-members .row {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust spacing between cards */
+    margin-bottom: 20px; /* Space between rows */
+    flex-wrap: wrap;
+}
+
+.team-members .card {
+    flex: 1;
+    max-width: 200px; /* Card width */
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.team-members .card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.team-members .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* Circular profile pictures */
+    margin-bottom: 10px;
+}
+
+
+
+/* Faculty Coordinator Section */
+.faculty-coordinator {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.faculty-coordinator h2{
+  color:#ddd;
+  padding-bottom: 5vh;
+}
+.faculty-card {
+  background: url('teambg.jpg') no-repeat center center fixed; 
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faculty-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 10px rgba(230, 226, 226, 0.99);
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #0077b5;
+}
+
+.details h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #5dc2ee;
+}
+
+.details p {
+  margin: 0.5rem 0;
+  color: #fcf6f6;
+}
+
+.details blockquote {
+  font-style: italic;
+  color: #ede7e7;
+  border-left: 4px solid #0077b5;
+  padding-left: 1rem;
+  margin: 0.5rem 0;
+}
+
+
+
+/* Video Panel Styling */
+.video-panel {
+  width: 100%;
+  aspect-ratio: 3 / 2; /* Enforces 3:2 ratio */
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.faculty-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.video-panel:hover .faculty-video {
+  opacity: 1;
+}
+
+/* Ensure Video Plays on Hover */
+.video-panel:hover .faculty-video {
+  animation: play-video 1s ease forwards;
+}
+
+  
+    #container3D{
+      position: fixed;
+      inset: 0;
+      /*background-color: #a32222;*/
+      z-index: 100;
+      pointer-events: none;
+  }

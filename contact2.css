@@ -1,0 +1,332 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Goldman', sans-serif;
+  color: white;
+  background: linear-gradient(-45deg, #131313, #000710, #000000,  #696969);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.main-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1; /* Ensure content is above the Three.js background */
+}
+
+@keyframes gradient {
+  0% { background-position: 10% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 10% 50%; }
+}
+
+/* Navigation bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  z-index: 1000;
+  transition: top 0.2s ease-in-out;
+}
+
+.navbar.scrolled {
+  top: -100px;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+}
+
+.logo img {
+  width: 120px;
+  position: relative;
+  top: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 50px;
+}
+
+.nav-links-left,
+.nav-links-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-links-left {
+  justify-content: flex-end;
+  flex-grow: 0.3;
+}
+
+.nav-links-right {
+  justify-content: flex-start;
+  flex-grow: 0.25;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  position: relative;
+  padding: 5px 10px;
+  white-space: nowrap;
+}
+
+.nav-links a:hover::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: white;
+  left: 0;
+  bottom: -5px;
+  animation: underline 0.3s ease-in-out forwards;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 70px;
+}
+
+@keyframes underline {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Contact Section */
+.contact {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 150px;
+  text-align: center;
+  color: #ffffff;
+  background: transparent;
+}
+
+.contact h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.form-group {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+  text-align: left; /* Align text to the left */
+}
+
+form label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #eeeeee;
+  text-align: left; /* Ensure labels are left-aligned */
+}
+
+form input, 
+form select, 
+form textarea {
+  width: 100%; /* Full width for input */
+  padding: 12px 150px; /* Inner spacing */
+  border: 1px solid #555555;
+  border-radius: 5px;
+  font-size: 1rem; /* Text size */
+  color: #000;
+  background-color: #f9f9f9;
+  box-sizing: border-box; /* Prevent padding from shrinking the field */
+  line-height: 1.2; /* Adjust vertical alignment of text */
+  vertical-align: top; /* Align text to the top */
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+form .required {
+  color: #ff5722;
+}
+
+
+/* Submit Button */
+.submit-btn {
+  background-color: #0b0b0b;
+  color: white;
+  padding: 15px 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #eaeaeacf;
+}
+
+/* Popup styles */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #cccccc;
+  color: rgb(0, 0, 0);
+  padding: 80px;
+  border-radius: 90px 400px 70px 50px;
+  width: 800px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: none;
+  transition: transform 0.5s ease, left 0.5s ease;
+}
+
+.popup.hidden {
+  display: none;
+}
+
+.popup.exiting {
+  transform: translate(100vw, -50%);
+}
+
+.popup p {
+  font-size: 20px; /* Bigger text for popup */
+  font-weight: bold;
+}
+
+.popup .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.popup .close-btn:hover {
+  transform: scale(1.2); /* Slightly bigger on hover */
+}
+
+/* Footer */
+footer {
+  position: relative;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.social-media {
+  display: inline-flex;
+  align-items: center;
+}
+
+.social-media a {
+  margin: 0 10px;
+}
+
+footer hr {
+  border: 1px solid rgba(255, 255, 255, 0.767);
+  width: 70%;
+  margin: 8px auto;
+}
+
+/* Social Media Icons - Individual Sizes and Hover Effects */
+.icon-linkedin {
+  width: 25px;
+  transition: transform 0.3s;
+}
+
+.icon-linkedin:hover {
+  transform: scale(1.1);
+}
+
+.icon-twitter {
+  width: 30px;
+  transition: transform 0.3s;
+}
+
+.icon-twitter:hover {
+  transform: scale(1.1);
+}
+
+.icon-instagram {
+  width: 27px;
+  transition: transform 0.3s;
+}
+
+.icon-instagram:hover {
+  transform: scale(1.1);
+}
+
+.icon-facebook {
+  width: 28px;
+  transition: transform 0.3s;
+}
+
+.icon-facebook:hover {
+  transform: scale(1.1);
+}
+
+.icon-youtube {
+  width: 32px;
+  transition: transform 0.3s;
+}
+
+.icon-youtube:hover {
+  transform: scale(1.1);
+}
